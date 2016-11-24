@@ -27,7 +27,7 @@
 	<dependency type="executable" location="extensions">objectgradient.py</dependency>
 	<dependency type="executable" location="extensions">inkex.py</dependency>
 
-	<param name="help" type="description">This extension apply a gradient to selection, starting from first object, to last object. If only one object is selected, nothing happen.</param>
+	<param name="help" type="description">Apply a gradient to selection, starting from first object, to last object. If only one object is selected, nothing happen.</param>
 
 	<param name="start-color-help" type="description">Gradient starting color:</param>
 

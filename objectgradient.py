@@ -373,11 +373,11 @@ class ObjectGradient(inkex.Effect):
 
         if self.options.gradient_orientation == 'top-to-bottom':
             sorted_selection_dimensions = sorted(selection_dimensions.items(),
-                                                 key=lambda node_infos: node_infos[1][1] + node_infos[1][3],
-                                                 reverse=True)
+                                                 key=lambda node_infos: node_infos[1][1])
         elif self.options.gradient_orientation == 'bottom-to-top':
             sorted_selection_dimensions = sorted(selection_dimensions.items(),
-                                                 key=lambda node_infos: node_infos[1][1])
+                                                 key=lambda node_infos: node_infos[1][1] + node_infos[1][3],
+                                                 reverse=True)
         elif self.options.gradient_orientation == 'right-to-left':
             sorted_selection_dimensions = sorted(selection_dimensions.items(),
                                                  key=lambda node_infos: node_infos[1][0] + node_infos[1][2],
