@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+<!--
+   objectgradient.inx
+
+   Copyright 2011
+
+   Pierre-Yves Landuré
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Idc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+-->
+	<_name>Object gradient</_name>
+	<id>org.biapy.filter.objectgradient</id>
+	<dependency type="executable" location="extensions">objectgradient.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+
+	<param name="help" type="description">This extension apply a gradient to selection, starting from first object, to last object. If only one object is selected, nothing happen.</param>
+
+	<param name="start-color-help" type="description">Gradient starting color:</param>
+
+	<param name="start-color" gui-text="Gradient starting color"
+		type="color"></param>
+
+	<param name="end-color-help" type="description">Gradient ending color:</param>
+
+	<param name="end-color" gui-text="Gradient ending color"
+		type="color"></param>
+
+	<param name="gradient-orientation" gui-text="Gradient orientation"
+		type="optiongroup" appearance="minimal">
+		<option value="left-to-right">Left to right</option>
+		<option value="right-to-left">Right to left</option>
+		<option value="top-to-bottom">Top to bottom</option>
+		<option value="bottom-to-top">Bottom to top</option>
+	</param>
+
+	<param name="stroke-only" gui-text="Apply to stroke"
+		type="boolean">false</param>
+	<!-- Effect menu integration settings -->
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			 <submenu _name="Render"/>
+		</effects-menu>
+	</effect>
+
+	<!-- Effect script settings -->
+	<script>
+		<command reldir="extensions" interpreter="python">objectgradient.py</command>
+	</script>
+</inkscape-extension>
